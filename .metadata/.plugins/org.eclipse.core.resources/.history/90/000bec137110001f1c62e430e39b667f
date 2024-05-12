@@ -475,8 +475,8 @@ void reload(){
 	}
 
 	uint8_t TXBuffer[100] = {};
-	sprintf((char*)TXBuffer, "\nNew round. There are %u live round(s) out of 6 chambers.\r\n", liveRound);
-	HAL_UART_Transmit(&hlpuart1, TXBuffer, 58, 100);
+	sprintf((char*)TXBuffer, "New round. There are %u live round(s) out of 6 chambers.\r\n", liveRound);
+	HAL_UART_Transmit(&hlpuart1, TXBuffer, 57, 100);
 
 }
 

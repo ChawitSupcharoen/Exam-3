@@ -132,13 +132,11 @@ int main(void)
 		  if(p1HP <= 0){
 			  uint8_t txt1[] = "Player 2 survived.";
 			  HAL_UART_Transmit(&hlpuart1, txt1, 18, 100);
-			  while(1){}
 
 		  }
 		  if(p2HP <= 0){
 			  uint8_t txt2[] = "Player 1 survived.";
 			  HAL_UART_Transmit(&hlpuart1, txt2, 18, 100);
-			  while(1){}
 		  }
 	  }
 	  reload();
@@ -475,8 +473,8 @@ void reload(){
 	}
 
 	uint8_t TXBuffer[100] = {};
-	sprintf((char*)TXBuffer, "\nNew round. There are %u live round(s) out of 6 chambers.\r\n", liveRound);
-	HAL_UART_Transmit(&hlpuart1, TXBuffer, 58, 100);
+	sprintf((char*)TXBuffer, "There are %u live round(s) out of 6 chambers.\r\n", liveRound);
+	HAL_UART_Transmit(&hlpuart1, TXBuffer, 46, 100);
 
 }
 
