@@ -454,6 +454,8 @@ void reload(){
 void shoot(){
 
 	uint8_t TXBuffer[100] = {};
+//	TXBuffer[6] = playerstat + 0x30;
+//	TXBuffer[15] = '\n';
 	sprintf((char*)TXBuffer, "Player%u's turn, choose your target.\r\n", playerstat);
 	HAL_UART_Transmit(&hlpuart1, TXBuffer, 37, 100);
 
@@ -478,8 +480,6 @@ void shoot(){
     }
         else{
             printf("The chamber is empty.\n");
-            sprintf((char*)TXBuffer, "Fortunately, the chamber is empty.\r\n");
-            HAL_UART_Transmit(&hlpuart1, TXBuffer, 36, 100);
         }
         magcap--;
         magazine = magazine >> 1;

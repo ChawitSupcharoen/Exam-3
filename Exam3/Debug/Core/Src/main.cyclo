@@ -7,6 +7,6 @@
 ../Core/Src/main.c:388:6:SPITxRx_Setup	1
 ../Core/Src/main.c:413:6:Write_LED_SPI	1
 ../Core/Src/main.c:427:9:Read_Val	3
-../Core/Src/main.c:444:6:reload	1
-../Core/Src/main.c:454:6:shoot	1
-../Core/Src/main.c:480:6:Error_Handler	1
+../Core/Src/main.c:445:6:reload	1
+../Core/Src/main.c:455:6:shoot	3
+../Core/Src/main.c:498:6:Error_Handler	1

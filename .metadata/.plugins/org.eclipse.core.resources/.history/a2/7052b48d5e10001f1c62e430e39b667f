@@ -428,7 +428,8 @@ uint8_t Read_Val(){
 
 	uint8_t RxBuff = 0;
 	while(1){
-		HAL_UART_Receive(&hlpuart1, &RxBuff, 1, 60000);
+		//HAL_UART_Receive(&hlpuart1, &RxBuff, 1, 60000);
+		RxBuff = '2;'
 		if (RxBuff == '1'){
 			return 1;
 		}

@@ -7,6 +7,6 @@
 ../Core/Src/main.c:388:6:SPITxRx_Setup	16	static
 ../Core/Src/main.c:413:6:Write_LED_SPI	24	static
 ../Core/Src/main.c:427:9:Read_Val	112	static
-../Core/Src/main.c:444:6:reload	8	static
-../Core/Src/main.c:454:6:shoot	112	static
-../Core/Src/main.c:480:6:Error_Handler	4	static,ignoring_inline_asm
+../Core/Src/main.c:445:6:reload	8	static
+../Core/Src/main.c:455:6:shoot	112	static
+../Core/Src/main.c:498:6:Error_Handler	4	static,ignoring_inline_asm
