@@ -21,7 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "stdio.h"
+
 #include "string.h"
 /* USER CODE END Includes */
 
@@ -46,9 +46,8 @@ UART_HandleTypeDef hlpuart1;
 SPI_HandleTypeDef hspi3;
 
 /* USER CODE BEGIN PV */
-// Game variable
-uint8_t magazine = 0;
-uint8_t magcap = 0;
+uint8_t SPIRx[10];
+
 
 /* USER CODE END PV */
 
@@ -61,11 +60,6 @@ static void MX_SPI3_Init(void);
 void SPITxRx_Setup();
 void Write_LED_SPI(uint8_t ledTable);
 uint8_t Read_BTN_SPI();
-
-// Game Function
-void reload();
-void shoot();
-
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -105,13 +99,8 @@ int main(void)
   MX_SPI3_Init();
   /* USER CODE BEGIN 2 */
   SPITxRx_Setup();
-
-  reload();
-  uint8_t TXstr[30];
-  memset(TXstr, 0,30);
-  sprintf((char*)TXstr, "Magazine value is %d.", magazine);
-
-  HAL_UART_Transmit(&hlpuart1, TXstr, sizeof(TXstr), 100);
+  uint8_t TXstr[] = "HelloWorld\0";
+  	  HAL_UART_Transmit(&hlpuart1, TXstr, sizeof(TXstr), 100);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -365,11 +354,7 @@ uint8_t Read_BTN_SPI(){
 	return 0;
 }
 
-void reload(){
 
-    magazine = HAL_GetTick() % 64;
-    magcap = 6;
-}
 /* USER CODE END 4 */
 
 /**

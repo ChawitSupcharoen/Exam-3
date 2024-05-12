@@ -105,11 +105,9 @@ int main(void)
   MX_SPI3_Init();
   /* USER CODE BEGIN 2 */
   SPITxRx_Setup();
-
-  reload();
   uint8_t TXstr[30];
   memset(TXstr, 0,30);
-  sprintf((char*)TXstr, "Magazine value is %d.", magazine);
+  sprintf((char*)TXstr, "Magazine value is %d.\r\n\0", magazine);
 
   HAL_UART_Transmit(&hlpuart1, TXstr, sizeof(TXstr), 100);
   /* USER CODE END 2 */
