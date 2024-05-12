@@ -1,10 +1,10 @@
-19:54:17 **** Incremental Build of configuration Debug for project Exam3 ****
+21:39:35 **** Incremental Build of configuration Debug for project Exam3 ****
 make -j20 all 
 arm-none-eabi-size   Exam3.elf 
    text	   data	    bss	    dec	    hex	filename
-  27596	    116	   2268	  29980	   751c	Exam3.elf
+  25412	    100	   2260	  27772	   6c7c	Exam3.elf
 Finished building: default.size.stdout
  
 
-19:54:17 Build Finished. 0 errors, 0 warnings. (took 212ms)
+21:39:35 Build Finished. 0 errors, 0 warnings. (took 266ms)
 

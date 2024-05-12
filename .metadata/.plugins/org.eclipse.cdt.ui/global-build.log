@@ -1,145 +1,4 @@
-17:06:40 **** Incremental Build of configuration Debug for project Exam3 ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'shoot':
-../Core/Src/main.c:463:13: warning: unused variable 'TxBuffer' [-Wunused-variable]
-  463 |     uint8_t TxBuffer[] = "Aim at playerx.\n";
-      |             ^~~~~~~~
-../Core/Src/main.c:460:17: warning: variable 'target' set but not used [-Wunused-but-set-variable]
-  460 |         uint8_t target = 0;
-      |                 ^~~~~~
-arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Exam3.elf
- 
-arm-none-eabi-size   Exam3.elf 
-arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
-   text	   data	    bss	    dec	    hex	filename
-  22552	     20	   1932	  24504	   5fb8	Exam3.elf
-Finished building: default.size.stdout
- 
-Finished building: Exam3.list
- 
-17:08:10 **** Incremental Build of configuration Debug for project Exam3 ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'shoot':
-../Core/Src/main.c:462:13: warning: unused variable 'TxBuffer' [-Wunused-variable]
-  462 |     uint8_t TxBuffer[] = "Aim at playerx.\n";
-      |             ^~~~~~~~
-arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Exam3.elf
- 
-arm-none-eabi-size   Exam3.elf 
-arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
-   text	   data	    bss	    dec	    hex	filename
-  22552	     20	   1932	  24504	   5fb8	Exam3.elf
-Finished building: default.size.stdout
- 
-Finished building: Exam3.list
- 
-17:08:38 **** Incremental Build of configuration Debug for project Exam3 ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'shoot':
-../Core/Src/main.c:461:13: warning: unused variable 'TxBuffer' [-Wunused-variable]
-  461 |     uint8_t TxBuffer[] = "Aim at playerx.\n";
-      |             ^~~~~~~~
-arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Exam3.elf
- 
-arm-none-eabi-size   Exam3.elf 
-arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
-   text	   data	    bss	    dec	    hex	filename
-  23136	     24	   1928	  25088	   6200	Exam3.elf
-Finished building: default.size.stdout
- 
-Finished building: Exam3.list
- 
-17:12:59 **** Incremental Build of configuration Debug for project Exam3 ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'shoot':
-../Core/Src/main.c:463:13: warning: unused variable 'TxBuffer' [-Wunused-variable]
-  463 |     uint8_t TxBuffer[16] = "Aim at playerx.";
-      |             ^~~~~~~~
-arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Exam3.elf
- 
-arm-none-eabi-size   Exam3.elf 
-arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
-   text	   data	    bss	    dec	    hex	filename
-  23144	     24	   1928	  25096	   6208	Exam3.elf
-Finished building: default.size.stdout
- 
-Finished building: Exam3.list
- 
-17:18:08 **** Incremental Build of configuration Debug for project Exam3 ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'shoot':
-../Core/Src/main.c:465:5: error: 'TXBuffer2' undeclared (first use in this function); did you mean 'TxBuffer2'?
-  465 |     TXBuffer2[13] = playerstat + 0x30;
-      |     ^~~~~~~~~
-      |     TxBuffer2
-../Core/Src/main.c:465:5: note: each undeclared identifier is reported only once for each function it appears in
-../Core/Src/main.c:464:13: warning: unused variable 'TxBuffer2' [-Wunused-variable]
-  464 |     uint8_t TxBuffer2[16] = "Aim at playerx.";
-      |             ^~~~~~~~~
-make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
-"make -j20 all" terminated with exit code 2. Build might be incomplete.
-17:18:35 **** Incremental Build of configuration Debug for project Exam3 ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'shoot':
-../Core/Src/main.c:464:13: error: conflicting types for 'TXBuffer'; have 'uint8_t[16]' {aka 'unsigned char[16]'}
-  464 |     uint8_t TXBuffer[16] = "Aim at playerx.";
-      |             ^~~~~~~~
-../Core/Src/main.c:456:17: note: previous definition of 'TXBuffer' with type 'uint8_t[17]' {aka 'unsigned char[17]'}
-  456 |         uint8_t TXBuffer[] = "Player%'s turn.%";
-      |                 ^~~~~~~~
-../Core/Src/main.c:467:34: error: 'TXBuffer2' undeclared (first use in this function); did you mean 'TXBuffer'?
-  467 |     HAL_UART_Transmit(&hlpuart1, TXBuffer2, 15, 100);
-      |                                  ^~~~~~~~~
-      |                                  TXBuffer
-../Core/Src/main.c:467:34: note: each undeclared identifier is reported only once for each function it appears in
-../Core/Src/main.c:464:13: warning: variable 'TXBuffer' set but not used [-Wunused-but-set-variable]
-  464 |     uint8_t TXBuffer[16] = "Aim at playerx.";
-      |             ^~~~~~~~
-make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
-"make -j20 all" terminated with exit code 2. Build might be incomplete.
-17:19:05 **** Incremental Build of configuration Debug for project Exam3 ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'shoot':
-../Core/Src/main.c:464:13: error: redefinition of 'TXBuffer'
-  464 |     uint8_t TXBuffer[100] = "Aim at playerx.";
-      |             ^~~~~~~~
-../Core/Src/main.c:456:17: note: previous definition of 'TXBuffer' with type 'uint8_t[100]' {aka 'unsigned char[100]'}
-  456 |         uint8_t TXBuffer[100] = "Player%'s turn.%";
-      |                 ^~~~~~~~
-../Core/Src/main.c:467:34: error: 'TXBuffer2' undeclared (first use in this function); did you mean 'TXBuffer'?
-  467 |     HAL_UART_Transmit(&hlpuart1, TXBuffer2, 15, 100);
-      |                                  ^~~~~~~~~
-      |                                  TXBuffer
-../Core/Src/main.c:467:34: note: each undeclared identifier is reported only once for each function it appears in
-../Core/Src/main.c:464:13: warning: variable 'TXBuffer' set but not used [-Wunused-but-set-variable]
-  464 |     uint8_t TXBuffer[100] = "Aim at playerx.";
-      |             ^~~~~~~~
-make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
-"make -j20 all" terminated with exit code 2. Build might be incomplete.
-17:19:22 **** Incremental Build of configuration Debug for project Exam3 ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'shoot':
-../Core/Src/main.c:464:13: error: redefinition of 'TXBuffer'
-  464 |     uint8_t TXBuffer[100] = "Aim at playerx.";
-      |             ^~~~~~~~
-../Core/Src/main.c:456:17: note: previous definition of 'TXBuffer' with type 'uint8_t[100]' {aka 'unsigned char[100]'}
-  456 |         uint8_t TXBuffer[100] = "Player%'s turn.%";
-      |                 ^~~~~~~~
-make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
-"make -j20 all" terminated with exit code 2. Build might be incomplete.
-17:20:13 **** Incremental Build of configuration Debug for project Exam3 ****
+20:58:10 **** Incremental Build of configuration Debug for project Exam3 ****
 make -j20 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -148,158 +7,19 @@ Finished building target: Exam3.elf
 arm-none-eabi-size   Exam3.elf 
 arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
    text	   data	    bss	    dec	    hex	filename
-  23164	     24	   1928	  25116	   621c	Exam3.elf
+  28176	    116	   2268	  30560	   7760	Exam3.elf
 Finished building: default.size.stdout
  
 Finished building: Exam3.list
  
-17:22:11 **** Incremental Build of configuration Debug for project Exam3 ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'shoot':
-../Core/Src/main.c:464:5: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
-  464 |     sprintf((char*) TxBuffer, "Aim at player%.\n");
-      |     ^~~~~~~
-../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
-   20 | #include "main.h"
-  +++ |+#include <stdio.h>
-   21 | 
-../Core/Src/main.c:464:5: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
-  464 |     sprintf((char*) TxBuffer, "Aim at player%.\n");
-      |     ^~~~~~~
-../Core/Src/main.c:464:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
-../Core/Src/main.c:464:21: error: 'TxBuffer' undeclared (first use in this function); did you mean 'TXBuffer'?
-  464 |     sprintf((char*) TxBuffer, "Aim at player%.\n");
-      |                     ^~~~~~~~
-      |                     TXBuffer
-../Core/Src/main.c:464:21: note: each undeclared identifier is reported only once for each function it appears in
-../Core/Src/main.c:465:5: error: 'TXBuffer2' undeclared (first use in this function); did you mean 'TXBuffer'?
-  465 |     TXBuffer2[13] = playerstat + 0x30;
-      |     ^~~~~~~~~
-      |     TXBuffer
-make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
-"make -j20 all" terminated with exit code 2. Build might be incomplete.
-17:22:40 **** Incremental Build of configuration Debug for project Exam3 ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'shoot':
-../Core/Src/main.c:464:21: error: 'TxBuffer' undeclared (first use in this function); did you mean 'TXBuffer'?
-  464 |     sprintf((char*) TxBuffer, "Aim at player%.\n");
-      |                     ^~~~~~~~
-      |                     TXBuffer
-../Core/Src/main.c:464:21: note: each undeclared identifier is reported only once for each function it appears in
-make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
-"make -j20 all" terminated with exit code 2. Build might be incomplete.
-17:22:51 **** Incremental Build of configuration Debug for project Exam3 ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'shoot':
-../Core/Src/main.c:464:47: warning: unknown conversion type character '\x0a' in format [-Wformat=]
-  464 |     sprintf((char*) TXBuffer, "Aim at player%.\n");
-      |                                               ^~
-arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Exam3.elf
- 
-arm-none-eabi-size   Exam3.elf 
-arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
-   text	   data	    bss	    dec	    hex	filename
-  25752	    104	   2264	  28120	   6dd8	Exam3.elf
-Finished building: default.size.stdout
- 
-Finished building: Exam3.list
- 
-17:24:32 **** Incremental Build of configuration Debug for project Exam3 ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'shoot':
-../Core/Src/main.c:464:46: warning: conversion lacks type at end of format [-Wformat=]
-  464 |     sprintf((char*) TXBuffer, "Aim at player%.");
-      |                                              ^
-arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Exam3.elf
- 
-arm-none-eabi-size   Exam3.elf 
-arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
-   text	   data	    bss	    dec	    hex	filename
-  25752	    104	   2264	  28120	   6dd8	Exam3.elf
-Finished building: default.size.stdout
- 
-Finished building: Exam3.list
- 
-19:23:46 **** Incremental Build of configuration Debug for project Exam3 ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'shoot':
-../Core/Src/main.c:459:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
-  459 |         sprintf(TXBuffer, "Player%u's turn.\r\n", playerstat);
-      |                 ^~~~~~~~
-      |                 |
-      |                 uint8_t * {aka unsigned char *}
-In file included from ../Core/Src/main.c:24:
-C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdio.h:254:18: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  254 | int     sprintf (char *__restrict, const char *__restrict, ...)
-      |                  ^
-../Core/Src/main.c:469:13: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
-  469 |     sprintf(TXBuffer, "Aim at player%u.\r\n", playerstat);
-      |             ^~~~~~~~
-      |             |
-      |             uint8_t * {aka unsigned char *}
-In file included from ../Core/Src/main.c:24:
-C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdio.h:254:18: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  254 | int     sprintf (char *__restrict, const char *__restrict, ...)
-      |                  ^
-arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Exam3.elf
- 
-arm-none-eabi-size   Exam3.elf 
-arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
-   text	   data	    bss	    dec	    hex	filename
-  25728	    104	   2264	  28096	   6dc0	Exam3.elf
-Finished building: default.size.stdout
- 
-Finished building: Exam3.list
- 
-19:24:34 **** Incremental Build of configuration Debug for project Exam3 ****
+20:58:22 **** Incremental Build of configuration Debug for project Exam3 ****
 make -j20 all 
 arm-none-eabi-size   Exam3.elf 
    text	   data	    bss	    dec	    hex	filename
-  25728	    104	   2264	  28096	   6dc0	Exam3.elf
+  28176	    116	   2268	  30560	   7760	Exam3.elf
 Finished building: default.size.stdout
  
-19:26:14 **** Incremental Build of configuration Debug for project Exam3 ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'shoot':
-../Core/Src/main.c:459:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
-  459 |         sprintf(TXBuffer, "Player%u's turn, choose your target.\r\n", playerstat);
-      |                 ^~~~~~~~
-      |                 |
-      |                 uint8_t * {aka unsigned char *}
-In file included from ../Core/Src/main.c:24:
-C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdio.h:254:18: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  254 | int     sprintf (char *__restrict, const char *__restrict, ...)
-      |                  ^
-../Core/Src/main.c:465:13: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
-  465 |     sprintf(TXBuffer, "Aim at player%u.\r\n", playerstat);
-      |             ^~~~~~~~
-      |             |
-      |             uint8_t * {aka unsigned char *}
-In file included from ../Core/Src/main.c:24:
-C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdio.h:254:18: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  254 | int     sprintf (char *__restrict, const char *__restrict, ...)
-      |                  ^
-arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Exam3.elf
- 
-arm-none-eabi-size   Exam3.elf 
-arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
-   text	   data	    bss	    dec	    hex	filename
-  25748	    104	   2264	  28116	   6dd4	Exam3.elf
-Finished building: default.size.stdout
- 
-Finished building: Exam3.list
- 
-19:26:45 **** Incremental Build of configuration Debug for project Exam3 ****
+21:03:23 **** Incremental Build of configuration Debug for project Exam3 ****
 make -j20 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -308,12 +28,12 @@ Finished building target: Exam3.elf
 arm-none-eabi-size   Exam3.elf 
 arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
    text	   data	    bss	    dec	    hex	filename
-  25748	    104	   2264	  28116	   6dd4	Exam3.elf
+  28404	    116	   2268	  30788	   7844	Exam3.elf
 Finished building: default.size.stdout
  
 Finished building: Exam3.list
  
-19:28:20 **** Incremental Build of configuration Debug for project Exam3 ****
+21:04:53 **** Incremental Build of configuration Debug for project Exam3 ****
 make -j20 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -322,12 +42,12 @@ Finished building target: Exam3.elf
 arm-none-eabi-size   Exam3.elf 
 arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
    text	   data	    bss	    dec	    hex	filename
-  25748	    104	   2264	  28116	   6dd4	Exam3.elf
+  28404	    116	   2268	  30788	   7844	Exam3.elf
 Finished building: default.size.stdout
  
 Finished building: Exam3.list
  
-19:30:45 **** Incremental Build of configuration Debug for project Exam3 ****
+21:08:02 **** Incremental Build of configuration Debug for project Exam3 ****
 make -j20 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -336,12 +56,12 @@ Finished building target: Exam3.elf
 arm-none-eabi-size   Exam3.elf 
 arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
    text	   data	    bss	    dec	    hex	filename
-  25752	    104	   2264	  28120	   6dd8	Exam3.elf
+  25508	    100	   2260	  27868	   6cdc	Exam3.elf
 Finished building: default.size.stdout
  
 Finished building: Exam3.list
  
-19:44:04 **** Incremental Build of configuration Debug for project Exam3 ****
+21:09:12 **** Incremental Build of configuration Debug for project Exam3 ****
 make -j20 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -350,12 +70,19 @@ Finished building target: Exam3.elf
 arm-none-eabi-size   Exam3.elf 
 arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
    text	   data	    bss	    dec	    hex	filename
-  27940	    116	   2268	  30324	   7674	Exam3.elf
+  25516	    100	   2260	  27876	   6ce4	Exam3.elf
 Finished building: default.size.stdout
  
 Finished building: Exam3.list
  
-19:45:43 **** Incremental Build of configuration Debug for project Exam3 ****
+21:09:48 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-size   Exam3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25516	    100	   2260	  27876	   6ce4	Exam3.elf
+Finished building: default.size.stdout
+ 
+21:10:57 **** Incremental Build of configuration Debug for project Exam3 ****
 make -j20 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -364,19 +91,12 @@ Finished building target: Exam3.elf
 arm-none-eabi-size   Exam3.elf 
 arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
    text	   data	    bss	    dec	    hex	filename
-  28004	    116	   2268	  30388	   76b4	Exam3.elf
+  25516	    100	   2260	  27876	   6ce4	Exam3.elf
 Finished building: default.size.stdout
  
 Finished building: Exam3.list
  
-19:46:47 **** Incremental Build of configuration Debug for project Exam3 ****
-make -j20 all 
-arm-none-eabi-size   Exam3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  28004	    116	   2268	  30388	   76b4	Exam3.elf
-Finished building: default.size.stdout
- 
-19:53:01 **** Incremental Build of configuration Debug for project Exam3 ****
+21:13:04 **** Incremental Build of configuration Debug for project Exam3 ****
 make -j20 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -385,22 +105,151 @@ Finished building target: Exam3.elf
 arm-none-eabi-size   Exam3.elf 
 arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
    text	   data	    bss	    dec	    hex	filename
-  27596	    116	   2268	  29980	   751c	Exam3.elf
+  25560	    100	   2260	  27920	   6d10	Exam3.elf
 Finished building: default.size.stdout
  
 Finished building: Exam3.list
  
-19:53:23 **** Incremental Build of configuration Debug for project Exam3 ****
+21:13:29 **** Incremental Build of configuration Debug for project Exam3 ****
 make -j20 all 
 arm-none-eabi-size   Exam3.elf 
    text	   data	    bss	    dec	    hex	filename
-  27596	    116	   2268	  29980	   751c	Exam3.elf
+  25560	    100	   2260	  27920	   6d10	Exam3.elf
 Finished building: default.size.stdout
  
-19:54:17 **** Incremental Build of configuration Debug for project Exam3 ****
+21:15:01 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Exam3.elf
+ 
+arm-none-eabi-size   Exam3.elf 
+arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
+   text	   data	    bss	    dec	    hex	filename
+  25500	    100	   2260	  27860	   6cd4	Exam3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Exam3.list
+ 
+21:17:53 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Exam3.elf
+ 
+arm-none-eabi-size   Exam3.elf 
+arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
+   text	   data	    bss	    dec	    hex	filename
+  25496	    100	   2260	  27856	   6cd0	Exam3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Exam3.list
+ 
+21:19:13 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Exam3.elf
+ 
+arm-none-eabi-size   Exam3.elf 
+arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
+   text	   data	    bss	    dec	    hex	filename
+  25548	    100	   2260	  27908	   6d04	Exam3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Exam3.list
+ 
+21:22:55 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Exam3.elf
+ 
+arm-none-eabi-size   Exam3.elf 
+arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
+   text	   data	    bss	    dec	    hex	filename
+  28608	    116	   2268	  30992	   7910	Exam3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Exam3.list
+ 
+21:25:12 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Exam3.elf
+ 
+arm-none-eabi-size   Exam3.elf 
+arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
+   text	   data	    bss	    dec	    hex	filename
+  28624	    116	   2268	  31008	   7920	Exam3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Exam3.list
+ 
+21:30:09 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Exam3.elf
+ 
+arm-none-eabi-size   Exam3.elf 
+arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
+   text	   data	    bss	    dec	    hex	filename
+  28640	    116	   2268	  31024	   7930	Exam3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Exam3.list
+ 
+21:32:09 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Exam3.elf
+ 
+arm-none-eabi-size   Exam3.elf 
+arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
+   text	   data	    bss	    dec	    hex	filename
+  28620	    116	   2268	  31004	   791c	Exam3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Exam3.list
+ 
+21:36:30 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32g4xx_hal_msp.d" -MT"Core/Src/stm32g4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32g4xx_it.d" -MT"Core/Src/stm32g4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_it.o"
+arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Exam3.elf
+ 
+arm-none-eabi-size   Exam3.elf 
+arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
+   text	   data	    bss	    dec	    hex	filename
+  25416	    100	   2260	  27776	   6c80	Exam3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Exam3.list
+ 
+21:38:58 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32g4xx_hal_msp.d" -MT"Core/Src/stm32g4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_hal_msp.o"
+arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Exam3.elf
+ 
+arm-none-eabi-size   Exam3.elf 
+arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
+   text	   data	    bss	    dec	    hex	filename
+  25412	    100	   2260	  27772	   6c7c	Exam3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Exam3.list
+ 
+21:39:35 **** Incremental Build of configuration Debug for project Exam3 ****
 make -j20 all 
 arm-none-eabi-size   Exam3.elf 
    text	   data	    bss	    dec	    hex	filename
-  27596	    116	   2268	  29980	   751c	Exam3.elf
+  25412	    100	   2260	  27772	   6c7c	Exam3.elf
 Finished building: default.size.stdout
  

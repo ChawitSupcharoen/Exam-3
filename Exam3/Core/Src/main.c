@@ -59,9 +59,9 @@ uint8_t p2HP = 4;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_LPUART1_UART_Init(void);
 static void MX_SPI3_Init(void);
 static void MX_ADC1_Init(void);
+static void MX_LPUART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
 void SPITxRx_Setup();
 void Write_LED_SPI(uint8_t ledTable);
@@ -106,16 +106,15 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_LPUART1_UART_Init();
   MX_SPI3_Init();
   MX_ADC1_Init();
+  MX_LPUART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
 
   SPITxRx_Setup();
-
   reload();
-  shoot();
+
 
   /* USER CODE END 2 */
 
@@ -448,6 +447,21 @@ void reload(){
 	HAL_ADC_Stop(&hadc1);
 
 	magcap = 6;
+	uint8_t liveRound = 0;
+
+	uint8_t buffMagazine = magazine;
+
+	for (int i = 0; i < 6; i++){
+		if(buffMagazine & 0x01){
+			liveRound++;
+		}
+		buffMagazine = buffMagazine >> 1;
+	}
+
+	uint8_t TXBuffer[100] = {};
+	sprintf((char*)TXBuffer, "There are %u live round(s) out of 6 chambers.\r\n", liveRound);
+	HAL_UART_Transmit(&hlpuart1, TXBuffer, 46, 100);
+
 }
 
 
