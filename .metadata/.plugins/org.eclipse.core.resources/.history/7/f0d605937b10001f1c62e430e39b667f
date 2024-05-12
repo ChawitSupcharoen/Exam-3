@@ -70,7 +70,7 @@ uint8_t Read_Val();
 // Game Function
 void reload();
 void shoot();
-uint8_t makeLEDTable();
+void makeLEDTable();
 
 /* USER CODE END PFP */
 
@@ -129,8 +129,6 @@ int main(void)
     /* USER CODE BEGIN 3 */
 	  while(magcap > 0){
 		  shoot();
-
-		  Write_LED_SPI(makeLEDTable(p1HP,p2HP));
 
 		  if(p1HP <= 0){
 			  uint8_t txt1[] = "Player 2 survived.";
@@ -521,7 +519,7 @@ void shoot(){
 
 }
 
-uint8_t makeLEDTable(int a, int b){
+void makeLEDTable(int a, int b){
 
 	    uint8_t buff = 0;
 
@@ -533,8 +531,6 @@ uint8_t makeLEDTable(int a, int b){
 		for(int i = 0; i < b; i++){
 			buff = buff | (0x80 >> i);
 		}
-
-		return makeLEDTable;
 }
 
 /* USER CODE END 4 */
