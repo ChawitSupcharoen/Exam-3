@@ -58,7 +58,6 @@ static void MX_SPI3_Init(void);
 /* USER CODE BEGIN PFP */
 void SPITxRx_Setup();
 void Write_LED_SPI(uint8_t ledTable);
-uint8_t Read_BTN_SPI();
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -107,7 +106,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-//	  Read_BTN_SPI();
+
 	  Write_LED_SPI(0x55);
 	  HAL_Delay(1000);
 	  Write_LED_SPI(0xaa);
@@ -318,13 +317,6 @@ void SPITxRx_Setup(){
 	buffer[4] = 0x00;
 	HAL_SPI_Transmit(&hspi3, buffer, 4, 100);
 	HAL_Delay(200);
-//	buffer[0] = 0b01000000;
-//	buffer[1] = 0x0D;
-//	buffer[2] = 0xFF;
-//	buffer[3] = 0x00;
-//	buffer[4] = 0x00;
-//	HAL_SPI_Transmit(&hspi3, buffer, 4, 100);
-//	HAL_Delay(200);
 }
 
 void Write_LED_SPI(uint8_t ledTable){
@@ -339,20 +331,6 @@ void Write_LED_SPI(uint8_t ledTable){
 	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2,GPIO_PIN_RESET);
 	HAL_SPI_Transmit(&hspi3, buffer, 5, 100);
 	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_SET);
-}
-
-uint8_t Read_BTN_SPI(){
-
-	uint8_t buffer[5] = {};
-	static uint8_t RXbuffer[5] = {};
-	buffer[0] = 0b01000001;
-	buffer[1] = 0x13;
-	buffer[2] = 0x00;
-	buffer[3] = 0x00;
-	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2,GPIO_PIN_RESET);
-	HAL_SPI_TransmitReceive(&hspi3, buffer, RXbuffer, 4, 100);
-	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_SET);
-	return 0;
 }
 
 

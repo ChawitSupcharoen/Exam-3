@@ -29,23 +29,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  12 .comment      00000043  00000000  00000000  0002003c  2**0
                   CONTENTS, READONLY
- 13 .debug_info   0000efa9  00000000  00000000  0002007f  2**0
+ 13 .debug_info   0000f010  00000000  00000000  0002007f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 00002014  00000000  00000000  0002f028  2**0
+ 14 .debug_abbrev 0000202f  00000000  00000000  0002f08f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 00000bf0  00000000  00000000  00031040  2**3
+ 15 .debug_aranges 00000bf8  00000000  00000000  000310c0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_rnglists 0000093b  00000000  00000000  00031c30  2**0
+ 16 .debug_rnglists 00000941  00000000  00000000  00031cb8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00024660  00000000  00000000  0003256b  2**0
+ 17 .debug_macro  00024660  00000000  00000000  000325f9  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   0000ec6e  00000000  00000000  00056bcb  2**0
+ 18 .debug_line   0000ec94  00000000  00000000  00056c59  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000e7dc7  00000000  00000000  00065839  2**0
+ 19 .debug_str    000e7dd6  00000000  00000000  000658ed  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  000030dc  00000000  00000000  0014d600  2**2
+ 20 .debug_frame  00003100  00000000  00000000  0014d6c4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000007f  00000000  00000000  001506dc  2**0
+ 21 .debug_line_str 0000007f  00000000  00000000  001507c4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -392,7 +392,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-
+//	  Read_BTN_SPI();
 	  Write_LED_SPI(0x55);
  8000530:	2055      	movs	r0, #85	; 0x55
  8000532:	f000 f9a1 	bl	8000878 <Write_LED_SPI>
@@ -940,6 +940,11 @@ void SPITxRx_Setup(){
 	HAL_Delay(200);
  8000860:	20c8      	movs	r0, #200	; 0xc8
  8000862:	f000 f9eb 	bl	8000c3c <HAL_Delay>
+//	buffer[2] = 0xFF;
+//	buffer[3] = 0x00;
+//	buffer[4] = 0x00;
+//	HAL_SPI_Transmit(&hspi3, buffer, 4, 100);
+//	HAL_Delay(200);
 }
  8000866:	bf00      	nop
  8000868:	3708      	adds	r7, #8
