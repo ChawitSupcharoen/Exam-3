@@ -41,13 +41,15 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+ADC_HandleTypeDef hadc1;
+
 UART_HandleTypeDef hlpuart1;
 
 SPI_HandleTypeDef hspi3;
 
 /* USER CODE BEGIN PV */
 // Game variable
-uint8_t magazine = 0;
+int magazine = 0;
 uint8_t magcap = 0;
 
 /* USER CODE END PV */
@@ -57,6 +59,7 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_LPUART1_UART_Init(void);
 static void MX_SPI3_Init(void);
+static void MX_ADC1_Init(void);
 /* USER CODE BEGIN PFP */
 void SPITxRx_Setup();
 void Write_LED_SPI(uint8_t ledTable);
@@ -103,15 +106,18 @@ int main(void)
   MX_GPIO_Init();
   MX_LPUART1_UART_Init();
   MX_SPI3_Init();
+  MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
+
+
   SPITxRx_Setup();
 
   reload();
   uint8_t TXstr[30];
   memset(TXstr, 0,30);
-  sprintf((char*)TXstr, "Magazine value is %d.", magazine);
+  sprintf(TXstr, "Magazine value is %d.\r\n", magazine);
+  HAL_UART_Transmit(&hlpuart1, TXstr, 30, 100);
 
-  HAL_UART_Transmit(&hlpuart1, TXstr, sizeof(TXstr), 100);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -170,6 +176,74 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief ADC1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_ADC1_Init(void)
+{
+
+  /* USER CODE BEGIN ADC1_Init 0 */
+
+  /* USER CODE END ADC1_Init 0 */
+
+  ADC_MultiModeTypeDef multimode = {0};
+  ADC_ChannelConfTypeDef sConfig = {0};
+
+  /* USER CODE BEGIN ADC1_Init 1 */
+
+  /* USER CODE END ADC1_Init 1 */
+
+  /** Common config
+  */
+  hadc1.Instance = ADC1;
+  hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
+  hadc1.Init.Resolution = ADC_RESOLUTION_12B;
+  hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  hadc1.Init.GainCompensation = 0;
+  hadc1.Init.ScanConvMode = ADC_SCAN_DISABLE;
+  hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  hadc1.Init.LowPowerAutoWait = DISABLE;
+  hadc1.Init.ContinuousConvMode = DISABLE;
+  hadc1.Init.NbrOfConversion = 1;
+  hadc1.Init.DiscontinuousConvMode = DISABLE;
+  hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+  hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+  hadc1.Init.DMAContinuousRequests = DISABLE;
+  hadc1.Init.Overrun = ADC_OVR_DATA_PRESERVED;
+  hadc1.Init.OversamplingMode = DISABLE;
+  if (HAL_ADC_Init(&hadc1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure the ADC multi-mode
+  */
+  multimode.Mode = ADC_MODE_INDEPENDENT;
+  if (HAL_ADCEx_MultiModeConfigChannel(&hadc1, &multimode) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure Regular Channel
+  */
+  sConfig.Channel = ADC_CHANNEL_1;
+  sConfig.Rank = ADC_REGULAR_RANK_1;
+  sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
+  sConfig.SingleDiff = ADC_SINGLE_ENDED;
+  sConfig.OffsetNumber = ADC_OFFSET_NONE;
+  sConfig.Offset = 0;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN ADC1_Init 2 */
+
+  /* USER CODE END ADC1_Init 2 */
+
 }
 
 /**
@@ -366,9 +440,12 @@ uint8_t Read_BTN_SPI(){
 }
 
 void reload(){
+	HAL_ADC_Start(&hadc1);
+	HAL_ADC_PollForConversion(&hadc1, 1000);
+	magazine = HAL_ADC_GetValue(&hadc1) % 64;
+	HAL_ADC_Stop(&hadc1);
 
-    magazine = HAL_GetTick() % 64;
-    magcap = 6;
+	magcap = 6;
 }
 /* USER CODE END 4 */
 
