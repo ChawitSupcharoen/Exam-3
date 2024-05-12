@@ -22,7 +22,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
-#include "string.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -49,8 +48,11 @@ SPI_HandleTypeDef hspi3;
 
 /* USER CODE BEGIN PV */
 // Game variable
-int magazine = 0;
+uint8_t magazine = 0;
 uint8_t magcap = 0;
+uint8_t playerstat = 1;
+uint8_t p1HP = 4;
+uint8_t p2HP = 4;
 
 /* USER CODE END PV */
 
@@ -63,7 +65,7 @@ static void MX_ADC1_Init(void);
 /* USER CODE BEGIN PFP */
 void SPITxRx_Setup();
 void Write_LED_SPI(uint8_t ledTable);
-uint8_t Read_BTN_SPI();
+uint8_t Read_Val();
 
 // Game Function
 void reload();
@@ -113,10 +115,7 @@ int main(void)
   SPITxRx_Setup();
 
   reload();
-  uint8_t TXstr[30];
-  memset(TXstr, 0,30);
-  sprintf(TXstr, "Magazine value is %d.\r\n", magazine);
-  HAL_UART_Transmit(&hlpuart1, TXstr, 30, 100);
+  shoot();
 
   /* USER CODE END 2 */
 
@@ -425,18 +424,21 @@ void Write_LED_SPI(uint8_t ledTable){
 	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_SET);
 }
 
-uint8_t Read_BTN_SPI(){
+uint8_t Read_Val(){
 
-	uint8_t buffer[5] = {};
-	static uint8_t RXbuffer[5] = {};
-	buffer[0] = 0b01000001;
-	buffer[1] = 0x13;
-	buffer[2] = 0x00;
-	buffer[3] = 0x00;
-	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2,GPIO_PIN_RESET);
-	HAL_SPI_TransmitReceive(&hspi3, buffer, RXbuffer, 4, 100);
-	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_SET);
-	return 0;
+	uint8_t RxBuff = 0;
+	while(1){
+		HAL_UART_Receive(&hlpuart1, &RxBuff, 1, 60000);
+		if (RxBuff == '1'){
+			return 1;
+		}
+		else if (RxBuff == '2'){
+			return 2;
+		}
+		uint8_t TXBuffer[100] = "";
+		sprintf((char*)TXBuffer, "Invalid input. Try again.\r\n");
+		HAL_UART_Transmit(&hlpuart1, TXBuffer, 27, 100);
+	}
 }
 
 void reload(){
@@ -447,6 +449,28 @@ void reload(){
 
 	magcap = 6;
 }
+
+
+void shoot(){
+
+	uint8_t TXBuffer[100] = {};
+//	TXBuffer[6] = playerstat + 0x30;
+//	TXBuffer[15] = '\n';
+	sprintf((char*)TXBuffer, "Player%u's turn, choose your target.\r\n", playerstat);
+	HAL_UART_Transmit(&hlpuart1, TXBuffer, 37, 100);
+
+    // Get target from user
+    playerstat = Read_Val();
+
+    sprintf((char*)TXBuffer, "Aim at player%u.\r\n", playerstat);
+    HAL_UART_Transmit(&hlpuart1, TXBuffer, 17, 100);
+
+
+
+
+
+}
+
 /* USER CODE END 4 */
 
 /**

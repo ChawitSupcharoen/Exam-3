@@ -1,27 +1,17 @@
-16:31:38 **** Incremental Build of configuration Debug for project Exam3 ****
+19:30:45 **** Incremental Build of configuration Debug for project Exam3 ****
 make -j20 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:118:11: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
-  118 |   sprintf(TXstr, "Magazine value is %d.\r\n", magazine);
-      |           ^~~~~
-      |           |
-      |           uint8_t * {aka unsigned char *}
-In file included from ../Core/Src/main.c:24:
-C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdio.h:254:18: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  254 | int     sprintf (char *__restrict, const char *__restrict, ...)
-      |                  ^
 arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: Exam3.elf
  
 arm-none-eabi-size   Exam3.elf 
 arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
    text	   data	    bss	    dec	    hex	filename
-  25112	    100	   2268	  27480	   6b58	Exam3.elf
+  25752	    104	   2264	  28120	   6dd8	Exam3.elf
 Finished building: default.size.stdout
  
 Finished building: Exam3.list
  
 
-16:31:39 Build Finished. 0 errors, 1 warnings. (took 823ms)
+19:30:46 Build Finished. 0 errors, 0 warnings. (took 818ms)
 
