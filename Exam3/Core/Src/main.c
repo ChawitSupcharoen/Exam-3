@@ -46,7 +46,7 @@ SPI_HandleTypeDef hspi3;
 
 /* USER CODE BEGIN PV */
 uint8_t SPIRx[10];
-uint8_t SPITx[10];
+
 
 /* USER CODE END PV */
 
@@ -57,7 +57,7 @@ static void MX_LPUART1_UART_Init(void);
 static void MX_SPI3_Init(void);
 /* USER CODE BEGIN PFP */
 void SPITxRx_Setup();
-void SPITxRx_readIO();
+void Write_LED_SPI(uint8_t ledTable);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -97,14 +97,6 @@ int main(void)
   MX_SPI3_Init();
   /* USER CODE BEGIN 2 */
   SPITxRx_Setup();
-  HAL_Delay(1000);
-  SPITx[0] = 0b01000000;
-  SPITx[1] = 0x01;
-  SPITx[2] = 0x00;
-  SPITx[3] = 0x00;
-  SPITx[4] = 0x00;
-  SPITxRx_readIO();
-  HAL_Delay(1000);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -114,19 +106,10 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  SPITx[0] = 0b01000000;
-	  SPITx[1] = 0x15;
-	  SPITx[2] = 0b01010101;
-	  SPITx[3] = 0x00;
-	  SPITx[4] = 0x00;
-	  SPITxRx_readIO();
+
+	  Write_LED_SPI(0x55);
 	  HAL_Delay(1000);
-	  SPITx[0] = 0b01000001;
-	  SPITx[1] = 0x15;
-	  SPITx[2] = 0b10101010;
-	  SPITx[3] = 0x00;
-	  SPITx[4] = 0x00;
-	  SPITxRx_readIO();
+	  Write_LED_SPI(0xaa);
 	  HAL_Delay(1000);
   }
   /* USER CODE END 3 */
@@ -319,22 +302,38 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 void SPITxRx_Setup(){
+	uint8_t buffer[4];
+
 	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, 0);
 	HAL_Delay(1);
 	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, 1);
 	HAL_Delay(1);
+
+	HAL_Delay(200);
+	buffer[0] = 0b01000000;
+	buffer[1] = 0x00;
+	buffer[2] = 0x00;
+	buffer[3] = 0x00;
+	buffer[4] = 0x00;
+	HAL_SPI_Transmit(&hspi3, buffer, 4, 100);
+	HAL_Delay(200);
 }
 
-void SPITxRx_readIO(){
-	if(HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_2)){
-		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2,0);
-		HAL_SPI_TransmitReceive_IT(&hspi3, SPITx, SPIRx, 5);
-	}
+void Write_LED_SPI(uint8_t ledTable){
+
+	uint8_t buffer[5] = {};
+	buffer[0] = 0b01000000;
+	buffer[1] = 0x14;
+	buffer[2] = ledTable;
+	buffer[3] = 0x00;
+	buffer[4] = 0x00;
+
+	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2,GPIO_PIN_RESET);
+	HAL_SPI_Transmit(&hspi3, buffer, 5, 100);
+	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_SET);
 }
 
-void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi){
-	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, 1);
-}
+
 /* USER CODE END 4 */
 
 /**
