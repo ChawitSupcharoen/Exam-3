@@ -16,3 +16,262 @@ Finished building: default.size.stdout
  
 Finished building: Exam3.list
  
+16:19:06 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-size   Exam3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28592	    116	   2268	  30976	   7900	Exam3.elf
+Finished building: default.size.stdout
+ 
+16:21:31 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-size   Exam3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28592	    116	   2268	  30976	   7900	Exam3.elf
+Finished building: default.size.stdout
+ 
+16:25:37 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'makeLEDTable':
+../Core/Src/main.c:537:24: warning: returning 'uint8_t (*)(int,  int)' {aka 'unsigned char (*)(int,  int)'} from a function with return type 'uint8_t' {aka 'unsigned char'} makes integer from pointer without a cast [-Wint-conversion]
+  537 |                 return makeLEDTable;
+      |                        ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Exam3.elf
+ 
+arm-none-eabi-size   Exam3.elf 
+arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
+   text	   data	    bss	    dec	    hex	filename
+  28592	    116	   2268	  30976	   7900	Exam3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Exam3.list
+ 
+16:27:01 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-size   Exam3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28592	    116	   2268	  30976	   7900	Exam3.elf
+Finished building: default.size.stdout
+ 
+16:28:02 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-size   Exam3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28592	    116	   2268	  30976	   7900	Exam3.elf
+Finished building: default.size.stdout
+ 
+16:32:31 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'makeLEDTable':
+../Core/Src/main.c:535:24: warning: returning 'uint8_t (*)(int,  int)' {aka 'unsigned char (*)(int,  int)'} from a function with return type 'uint8_t' {aka 'unsigned char'} makes integer from pointer without a cast [-Wint-conversion]
+  535 |                 return makeLEDTable;
+      |                        ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Exam3.elf
+ 
+arm-none-eabi-size   Exam3.elf 
+arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
+   text	   data	    bss	    dec	    hex	filename
+  28588	    116	   2268	  30972	   78fc	Exam3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Exam3.list
+ 
+16:34:21 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'makeLEDTable':
+../Core/Src/main.c:535:24: warning: returning 'uint8_t (*)(int,  int)' {aka 'unsigned char (*)(int,  int)'} from a function with return type 'uint8_t' {aka 'unsigned char'} makes integer from pointer without a cast [-Wint-conversion]
+  535 |                 return makeLEDTable;
+      |                        ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Exam3.elf
+ 
+arm-none-eabi-size   Exam3.elf 
+arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
+   text	   data	    bss	    dec	    hex	filename
+  28588	    116	   2268	  30972	   78fc	Exam3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Exam3.list
+ 
+16:35:59 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'makeLEDTable':
+../Core/Src/main.c:537:24: warning: returning 'uint8_t (*)(int,  int)' {aka 'unsigned char (*)(int,  int)'} from a function with return type 'uint8_t' {aka 'unsigned char'} makes integer from pointer without a cast [-Wint-conversion]
+  537 |                 return makeLEDTable;
+      |                        ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Exam3.elf
+ 
+arm-none-eabi-size   Exam3.elf 
+arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
+   text	   data	    bss	    dec	    hex	filename
+  28596	    116	   2268	  30980	   7904	Exam3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Exam3.list
+ 
+16:49:36 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'SPITxRx_Setup':
+../Core/Src/main.c:411:17: warning: unused variable 'buffer' [-Wunused-variable]
+  411 |         uint8_t buffer[4];
+      |                 ^~~~~~
+../Core/Src/main.c: In function 'Write_LED_SPI':
+../Core/Src/main.c:437:17: warning: unused variable 'buffer' [-Wunused-variable]
+  437 |         uint8_t buffer[5] = {};
+      |                 ^~~~~~
+../Core/Src/main.c: In function 'makeLEDTable':
+../Core/Src/main.c:546:24: warning: returning 'uint8_t (*)(int,  int)' {aka 'unsigned char (*)(int,  int)'} from a function with return type 'uint8_t' {aka 'unsigned char'} makes integer from pointer without a cast [-Wint-conversion]
+  546 |                 return makeLEDTable;
+      |                        ^~~~~~~~~~~~
+../Core/Src/main.c: In function 'SPITxRx_readIO':
+../Core/Src/main.c:552:59: error: 'SPIRx' undeclared (first use in this function); did you mean 'SPITx'?
+  552 |                 HAL_SPI_TransmitReceive_IT(&hspi3, SPITx, SPIRx, 5);
+      |                                                           ^~~~~
+      |                                                           SPITx
+../Core/Src/main.c:552:59: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+16:50:06 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'SPITxRx_Setup':
+../Core/Src/main.c:412:17: warning: unused variable 'buffer' [-Wunused-variable]
+  412 |         uint8_t buffer[4];
+      |                 ^~~~~~
+../Core/Src/main.c: In function 'Write_LED_SPI':
+../Core/Src/main.c:438:17: warning: unused variable 'buffer' [-Wunused-variable]
+  438 |         uint8_t buffer[5] = {};
+      |                 ^~~~~~
+../Core/Src/main.c: In function 'makeLEDTable':
+../Core/Src/main.c:547:24: warning: returning 'uint8_t (*)(int,  int)' {aka 'unsigned char (*)(int,  int)'} from a function with return type 'uint8_t' {aka 'unsigned char'} makes integer from pointer without a cast [-Wint-conversion]
+  547 |                 return makeLEDTable;
+      |                        ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Exam3.elf
+ 
+arm-none-eabi-size   Exam3.elf 
+arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
+   text	   data	    bss	    dec	    hex	filename
+  29004	    116	   2292	  31412	   7ab4	Exam3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Exam3.list
+ 
+16:51:36 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-size   Exam3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29004	    116	   2292	  31412	   7ab4	Exam3.elf
+Finished building: default.size.stdout
+ 
+16:52:38 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'SPITxRx_Setup':
+../Core/Src/main.c:412:17: warning: unused variable 'buffer' [-Wunused-variable]
+  412 |         uint8_t buffer[4];
+      |                 ^~~~~~
+../Core/Src/main.c: In function 'makeLEDTable':
+../Core/Src/main.c:546:24: warning: returning 'uint8_t (*)(int,  int)' {aka 'unsigned char (*)(int,  int)'} from a function with return type 'uint8_t' {aka 'unsigned char'} makes integer from pointer without a cast [-Wint-conversion]
+  546 |                 return makeLEDTable;
+      |                        ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Exam3.elf
+ 
+arm-none-eabi-size   Exam3.elf 
+arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
+   text	   data	    bss	    dec	    hex	filename
+  28996	    116	   2292	  31404	   7aac	Exam3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Exam3.list
+ 
+16:53:47 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-size   Exam3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28996	    116	   2292	  31404	   7aac	Exam3.elf
+Finished building: default.size.stdout
+ 
+16:57:30 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'SPITxRx_Setup':
+../Core/Src/main.c:412:17: warning: unused variable 'buffer' [-Wunused-variable]
+  412 |         uint8_t buffer[4];
+      |                 ^~~~~~
+arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Exam3.elf
+ 
+arm-none-eabi-size   Exam3.elf 
+arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
+   text	   data	    bss	    dec	    hex	filename
+  28988	    116	   2292	  31396	   7aa4	Exam3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Exam3.list
+ 
+17:18:44 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'SPITxRx_Setup':
+../Core/Src/main.c:413:17: warning: unused variable 'buffer' [-Wunused-variable]
+  413 |         uint8_t buffer[4];
+      |                 ^~~~~~
+arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Exam3.elf
+ 
+arm-none-eabi-size   Exam3.elf 
+arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
+   text	   data	    bss	    dec	    hex	filename
+  29020	    116	   2292	  31428	   7ac4	Exam3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Exam3.list
+ 
+17:21:03 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'SPITxRx_Setup':
+../Core/Src/main.c:413:17: warning: unused variable 'buffer' [-Wunused-variable]
+  413 |         uint8_t buffer[4];
+      |                 ^~~~~~
+../Core/Src/main.c: In function 'makeLEDTable':
+../Core/Src/main.c:548:1: warning: statement with no effect [-Wunused-value]
+  548 | 2               return ~buff;
+      | ^
+../Core/Src/main.c:548:8: error: expected ';' before 'return'
+  548 | 2               return ~buff;
+      |        ^        ~~~~~~
+      |        ;
+../Core/Src/main.c:549:1: warning: control reaches end of non-void function [-Wreturn-type]
+  549 | }
+      | ^
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+17:21:28 **** Incremental Build of configuration Debug for project Exam3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'SPITxRx_Setup':
+../Core/Src/main.c:413:17: warning: unused variable 'buffer' [-Wunused-variable]
+  413 |         uint8_t buffer[4];
+      |                 ^~~~~~
+arm-none-eabi-gcc -o "Exam3.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\asus\Documents\FIBO\FIBO Year 2 Simester 2\Microcontroller\Exam 3\Exam3\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Exam3.elf
+ 
+arm-none-eabi-size   Exam3.elf 
+arm-none-eabi-objdump -h -S  Exam3.elf  > "Exam3.list"
+   text	   data	    bss	    dec	    hex	filename
+  29020	    116	   2292	  31428	   7ac4	Exam3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Exam3.list
+ 

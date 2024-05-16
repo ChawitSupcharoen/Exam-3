@@ -54,6 +54,9 @@ uint8_t playerstat = 1;
 uint8_t p1HP = 4;
 uint8_t p2HP = 4;
 
+uint8_t SPITx[10];
+uint8_t SPIRx[10];
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -66,6 +69,7 @@ static void MX_LPUART1_UART_Init(void);
 void SPITxRx_Setup();
 void Write_LED_SPI(uint8_t ledTable);
 uint8_t Read_Val();
+void SPITxRx_readIO();
 
 // Game Function
 void reload();
@@ -114,8 +118,10 @@ int main(void)
 
 
   SPITxRx_Setup();
+
   reload();
 
+  Write_LED_SPI(makeLEDTable(p2HP,p1HP));
 
   /* USER CODE END 2 */
 
@@ -130,7 +136,7 @@ int main(void)
 	  while(magcap > 0){
 		  shoot();
 
-		  Write_LED_SPI(makeLEDTable(p1HP,p2HP));
+		  Write_LED_SPI(makeLEDTable(p2HP,p1HP));
 
 		  if(p1HP <= 0){
 			  uint8_t txt1[] = "Player 2 survived.";
@@ -412,12 +418,12 @@ void SPITxRx_Setup(){
 	HAL_Delay(1);
 
 	HAL_Delay(200);
-	buffer[0] = 0b01000000;
-	buffer[1] = 0x00;
-	buffer[2] = 0x00;
-	buffer[3] = 0x00;
-	buffer[4] = 0x00;
-	HAL_SPI_Transmit(&hspi3, buffer, 4, 100);
+	SPITx[0] = 0b01000000;
+	SPITx[1] = 0x01;
+	SPITx[2] = 0x00;
+	SPITx[3] = 0x00;
+	SPITx[4] = 0x00;
+	SPITxRx_readIO();
 	HAL_Delay(200);
 //	buffer[0] = 0b01000000;
 //	buffer[1] = 0x0D;
@@ -430,16 +436,20 @@ void SPITxRx_Setup(){
 
 void Write_LED_SPI(uint8_t ledTable){
 
-	uint8_t buffer[5] = {};
-	buffer[0] = 0b01000000;
-	buffer[1] = 0x14;
-	buffer[2] = ledTable;
-	buffer[3] = 0x00;
-	buffer[4] = 0x00;
+	SPITx[0] = 0b01000000;
+	SPITx[1] = 0x15;
+	SPITx[2] = ledTable;
+	SPITx[3] = 0x00;
+	SPITx[4] = 0x00;
+	SPITxRx_readIO();
 
-	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2,GPIO_PIN_RESET);
-	HAL_SPI_Transmit(&hspi3, buffer, 5, 100);
-	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_SET);
+	HAL_Delay(100);
+
+//	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2,GPIO_PIN_RESET);
+//	HAL_SPI_Transmit(&hspi3, buffer, 4, 100);
+//	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_SET);
+
+
 }
 
 uint8_t Read_Val(){
@@ -498,8 +508,8 @@ void shoot(){
 
     // Check ammo
     if (magazine & 0x01){
-    	sprintf((char*)TXBuffer, "The chamber have live round. Player%u is shot.\r\n", playerstat);
-    	HAL_UART_Transmit(&hlpuart1, TXBuffer, 47, 100);
+    	sprintf((char*)TXBuffer, "The chamber have live round. Player%u is shot.\r\n\r\n", playerstat);
+    	HAL_UART_Transmit(&hlpuart1, TXBuffer, 49, 100);
 
     	// Deal damage
         if (playerstat - 1){
@@ -511,8 +521,8 @@ void shoot(){
     }
         else{
             printf("The chamber is empty.\n");
-            sprintf((char*)TXBuffer, "Fortunately, the chamber is empty.\r\n");
-            HAL_UART_Transmit(&hlpuart1, TXBuffer, 36, 100);
+            sprintf((char*)TXBuffer, "Fortunately, the chamber is empty.\r\n\r\n");
+            HAL_UART_Transmit(&hlpuart1, TXBuffer, 38, 100);
         }
         magcap--;
         magazine = magazine >> 1;
@@ -534,7 +544,19 @@ uint8_t makeLEDTable(int a, int b){
 			buff = buff | (0x80 >> i);
 		}
 
-		return makeLEDTable;
+
+		return ~buff;
+}
+
+void SPITxRx_readIO(){
+	if(HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_2)){
+		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2,0);
+		HAL_SPI_TransmitReceive_IT(&hspi3, SPITx, SPIRx, 5);
+	}
+}
+
+void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi){
+	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, 1);
 }
 
 /* USER CODE END 4 */
